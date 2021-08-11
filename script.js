@@ -97,9 +97,9 @@ const displayImgJum = (query) => {
   })
     .then(response => response.json())
     .then(data => {
-      const jum = document.querySelector('.jumbotron.jumbotron-fluid.container .container')
-      jum.innerHTML = `<img src="${data.photos.src.tiny}"/>`
       console.log(data.photos)
+      const jum = document.querySelector('.jumbotron.jumbotron-fluid.container .container')
+      jum.innerHTML = `<img src="${data.photos[0].src.medium}"/>`
 
     }).catch(err => console.log(err))
 }
