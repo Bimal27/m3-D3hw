@@ -14,9 +14,9 @@
            const body= document.querySelector('.modal-body')
            image=`<img src="${url}"/>`
            body.innerHTML= image
-
-
-
+       }
+       const hideImages = (e) =>{
+           e.target.closest('.col-md-4').remove()
        }
 
 
@@ -48,8 +48,9 @@
                         <button
                           type="button"
                           class="btn btn-sm btn-outline-secondary"
+                          onClick="hideImages(event)"
                         >
-                          Edit
+                          Hide
                         </button>
                       </div>
                       <small class="text-muted">${photo.id}</small>
