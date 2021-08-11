@@ -7,6 +7,20 @@
         // 4) The Edit button should be replace with a "Hide" button. 
         // 5) When the hide button is pressed, the whole picture card disappears.
         // 6) Replace the "9 mins" string in the card template with the ID of the Image
+
+
+       const showModal = (e) => {
+           const url = e.target.closest(".card").children[0].src
+           const body= document.querySelector('.modal-body')
+           image=`<img src="${url}"/>`
+           body.innerHTML= image
+
+
+
+       }
+
+
+        
         const displayImages = (data) =>{
             const row = document.querySelector('.album .row')
             row.innerHTML = ""
@@ -25,7 +39,9 @@
                       <div class="btn-group">
                         <button
                           type="button"
-                          class="btn btn-sm btn-outline-secondary"
+                          class="btn btn-sm btn-outline-secondary" 
+                          onClick="showModal(event)"
+                          data-toggle="modal" data-target="#exampleModal"
                         >
                           View
                         </button>
@@ -64,7 +80,7 @@
              primaryButton.addEventListener('click' ,  () =>{
                  loadImages('human')
              })
-             secondaryButtonn.addEventListener('click', ()=>{
+             secondaryButtonn.addEventListener('click', () =>{
                  loadImages('nature')
              })
             
